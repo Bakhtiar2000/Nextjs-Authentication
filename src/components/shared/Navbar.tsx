@@ -1,6 +1,16 @@
-import Link from "next/link";
+"use client";
 
-const Navbar = () => {
+import { signOut } from "next-auth/react";
+import Link from "next/link";
+type UserProps = {
+  user?: {
+    name?: string | null | undefined;
+    email?: string | null | undefined;
+    image?: string | null | undefined;
+  };
+};
+
+const Navbar = ({ session }: { session: UserProps | null }) => {
   return (
     <div className="navbar bg-base-100  border-b  w-[90%] mx-auto">
       <div className="navbar-start">
@@ -59,16 +69,23 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <button className="btn btn-error btn-outline text-white rounded-full px-5">
-          Logout
-        </button>
-
-        <Link
-          href="/login"
-          className="btn btn-accent btn-outline text-white rounded-full px-5"
-        >
-          Login
-        </Link>
+        {session?.user ? (
+          <button
+            onClick={() =>
+              signOut({ callbackUrl: "http://localhost:3000/login" })
+            }
+            className="btn btn-error btn-outline text-white rounded-full px-5"
+          >
+            Logout
+          </button>
+        ) : (
+          <Link
+            href="/login"
+            className="btn btn-accent btn-outline text-white rounded-full px-5"
+          >
+            Login
+          </Link>
+        )}
       </div>
     </div>
   );
