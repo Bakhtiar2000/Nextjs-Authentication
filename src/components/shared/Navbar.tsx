@@ -71,7 +71,7 @@ const Navbar = ({ session }: { session: UserProps | null }) => {
       <div className="navbar-end">
         {session?.user ? (
           <button
-            onClick={() => signOut()} // { callbackUrl: "http://localhost:3000/login" } -------------  As we used middlewear.ts file, callbackUrl won't be necessary
+            onClick={() => signOut()} // { callbackUrl: "https://nextjs-auth-2hn3tf3wg-bakhtiar2000s-projects.vercel.app/login" } -------------  As we used middlewear.ts file, callbackUrl won't be necessary
             className="btn btn-error btn-outline text-white rounded-full px-5"
           >
             Logout

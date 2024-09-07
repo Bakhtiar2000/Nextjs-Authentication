@@ -97,7 +97,8 @@ const LoginPage = () => {
             <button
               onClick={() =>
                 signIn("google", {
-                  callbackUrl: "http://localhost:3000/dashboard", // redirects to dashboard page after login
+                  callbackUrl:
+                    "https://nextjs-auth-2hn3tf3wg-bakhtiar2000s-projects.vercel.app/dashboard", // redirects to dashboard page after login
                 })
               }
               className="btn btn-circle "
@@ -112,7 +113,7 @@ const LoginPage = () => {
             <button
               onClick={() =>
                 signIn("github", {
-                  callbackUrl: "http://localhost:3000/dashboard", // redirects to dashboard page after login
+                  callbackUrl: "http://:3000/dashboard", // redirects to dashboard page after login
                 })
               }
               className="btn btn-circle"

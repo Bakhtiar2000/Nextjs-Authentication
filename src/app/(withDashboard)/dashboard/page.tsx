@@ -19,7 +19,10 @@ const DashboardPage = async () => {
             className="rounded-full border-2 border-accent mx-auto mt-10"
             width={80}
             height={80}
-            src={session?.user?.image as string}
+            src={
+              session?.user?.image ||
+              "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+            }
             alt={session?.user?.name as string}
           />
         </>
