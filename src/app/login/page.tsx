@@ -24,7 +24,6 @@ const LoginPage = () => {
 
     try {
       const res = await loginUser(data);
-      console.log(res);
       if (res.accessToken) {
         router.push("/");
         localStorage.setItem("accessToken", res.accessToken);
