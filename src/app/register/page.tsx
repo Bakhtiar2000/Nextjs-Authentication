@@ -25,7 +25,6 @@ const RegisterPage = () => {
 
     try {
       const res = await registerUser(data);
-      console.log(res);
       if (res.success) {
         router.push("/login");
       }
