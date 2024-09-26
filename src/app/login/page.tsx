@@ -28,7 +28,6 @@ const LoginPage = () => {
       }
       alert(res.message);
     } catch (err: any) {
-      console.error(err.message);
       throw new Error(err.message);
     }
   };
